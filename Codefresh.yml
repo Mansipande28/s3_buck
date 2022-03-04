@@ -65,24 +65,4 @@ steps:
 
     stage: "deploy"
 
-  askForPermissionForDestroy:
-   type: pending-approval
-   title: Terraform Destroy ?
-   stage: approval for destroy
-
-  destroy:
-    title: Terraform Destroy
-    type: freestyle
-    working_directory: './s3Module'
-    arguments:
-      image: 'hashicorp/terraform'
-      commands:
-        - terraform init
-        - terraform destroy -auto-approve
-      when:
-        steps:
-          - name: askForPermissionForDestroy
-            on:
-             - approved
-
-    stage: "destroy"
+  
