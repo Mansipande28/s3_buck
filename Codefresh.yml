@@ -34,7 +34,7 @@ steps:
   plan:
     title: Terraform Plan
     type: freestyle
-    working_directory: './s3Module'
+    working_directory: './s3_buck'
     arguments:
       image: 'hashicorp/terraform'
       commands:
@@ -51,7 +51,7 @@ steps:
   deploy:
     title: Terraform Apply
     type: freestyle
-    working_directory: './s3Module'
+    working_directory: './s3_buck'
     arguments:
       image: 'hashicorp/terraform'
       commands:
